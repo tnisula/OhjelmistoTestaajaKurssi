@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1 (Python 3.5.3 on win32)" rpa="false" generated="20181221 12:16:31.742">
+<suite name="AutomationPractise" id="s1" source="C:\development\robot-scripts\AutomationPractise\tests\AutomationPractise.robot">
+<test name="Register User" id="s1-t1">
+<kw type="setup" name="Begin Web Test" library="CommonWeb">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20181221 12:16:31.978" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20181221 12:16:31.978" endtime="20181221 12:16:34.480"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:31.977" endtime="20181221 12:16:34.480"></status>
+</kw>
+<kw name="Do Registration" library="AutomationPractiseApp">
+<kw name="Load" library="LandingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20181221 12:16:34.483" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20181221 12:16:34.483" endtime="20181221 12:16:40.920"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181221 12:16:42.928" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20181221 12:16:40.920" endtime="20181221 12:16:42.928"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:34.482" endtime="20181221 12:16:42.928"></status>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20181221 12:16:42.936" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20181221 12:16:42.929" endtime="20181221 12:16:42.936"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:42.929" endtime="20181221 12:16:42.936"></status>
+</kw>
+<kw name="Try to Register a New User Using Empty Email" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${TOP_NAV_LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20181221 12:16:42.936" level="INFO">Clicking element 'css=#header &gt; div.nav &gt; div &gt; div &gt; nav &gt; div.header_user_info &gt; a'.</msg>
+<status status="PASS" starttime="20181221 12:16:42.936" endtime="20181221 12:16:44.988"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Authentication</arg>
+</arguments>
+<msg timestamp="20181221 12:16:45.031" level="INFO">Current page contains text 'Authentication'.</msg>
+<status status="PASS" starttime="20181221 12:16:44.988" endtime="20181221 12:16:45.031"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="email_create"]</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20181221 12:16:45.032" level="INFO">Typing text '' into text field 'xpath=//*[@id="email_create"]'.</msg>
+<status status="PASS" starttime="20181221 12:16:45.032" endtime="20181221 12:16:45.187"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="SubmitCreate"]</arg>
+</arguments>
+<msg timestamp="20181221 12:16:45.187" level="INFO">Clicking button 'xpath=//*[@id="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20181221 12:16:45.187" endtime="20181221 12:16:45.563"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20181221 12:16:46.566" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20181221 12:16:45.564" endtime="20181221 12:16:46.566"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Invalid email address.</arg>
+</arguments>
+<msg timestamp="20181221 12:16:46.597" level="INFO">Current page contains text 'Invalid email address.'.</msg>
+<status status="PASS" starttime="20181221 12:16:46.566" endtime="20181221 12:16:46.597"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:42.936" endtime="20181221 12:16:46.597"></status>
+</kw>
+<kw name="Try to Register a New User" library="TopNav">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="email_create"]</arg>
+<arg>koenimi2@gmail.com</arg>
+</arguments>
+<msg timestamp="20181221 12:16:46.597" level="INFO">Typing text 'koenimi2@gmail.com' into text field 'xpath=//*[@id="email_create"]'.</msg>
+<status status="PASS" starttime="20181221 12:16:46.597" endtime="20181221 12:16:46.784"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="create-account_form"]/div/div[3]/input[2]</arg>
+</arguments>
+<msg timestamp="20181221 12:16:46.785" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="create-account_form"]/div/div[3]/input[2]'.</msg>
+<status status="PASS" starttime="20181221 12:16:46.785" endtime="20181221 12:16:46.878"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="SubmitCreate"]</arg>
+</arguments>
+<msg timestamp="20181221 12:16:46.879" level="INFO">Clicking button 'xpath=//*[@id="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20181221 12:16:46.879" endtime="20181221 12:16:47.029"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20181221 12:16:49.035" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20181221 12:16:47.031" endtime="20181221 12:16:49.035"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="account-creation_form"]</arg>
+</arguments>
+<msg timestamp="20181221 12:16:49.069" level="INFO">Current page contains element 'xpath=//*[@id="account-creation_form"]'.</msg>
+<status status="PASS" starttime="20181221 12:16:49.035" endtime="20181221 12:16:49.070"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:46.597" endtime="20181221 12:16:49.070"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:34.481" endtime="20181221 12:16:49.070"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="CommonWeb">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>"Lopetuksessa"</arg>
+</arguments>
+<msg timestamp="20181221 12:16:49.072" level="INFO">"Lopetuksessa"</msg>
+<status status="PASS" starttime="20181221 12:16:49.072" endtime="20181221 12:16:49.072"></status>
+</kw>
+<status status="PASS" starttime="20181221 12:16:49.071" endtime="20181221 12:16:49.073"></status>
+</kw>
+<doc>Tämä testi ...</doc>
+<tags>
+<tag>Test3</tag>
+</tags>
+<status critical="yes" status="PASS" starttime="20181221 12:16:31.976" endtime="20181221 12:16:49.073"></status>
+</test>
+<doc>Talk about what this suite of tests does</doc>
+<status status="PASS" starttime="20181221 12:16:31.744" endtime="20181221 12:16:49.075"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Test3</stat>
+</tag>
+<suite>
+<stat pass="1" name="AutomationPractise" id="s1" fail="0">AutomationPractise</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
