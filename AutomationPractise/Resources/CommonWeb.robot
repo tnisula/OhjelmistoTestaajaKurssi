@@ -10,5 +10,5 @@ Begin Web Test
     #Maximize Browser Window
 
 End Web Test
-    # close all browsers
-    Log  "Lopetuksessa"
+    close all browsers
+    # Log  "Lopetuksessa"
