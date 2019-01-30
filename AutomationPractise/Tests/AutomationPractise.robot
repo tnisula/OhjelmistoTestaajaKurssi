@@ -8,7 +8,7 @@ Test Teardown  End Web Test
 # robot -d results tests/AutomationPractise.robot
 
 *** Variables ***
-${BROWSER} =  chrome
+${BROWSER} =  firefox
 ${URL} =  http://automationpractice.com/index.php
 
 *** Test Cases ***

@@ -28,7 +28,7 @@ Try to Register a New User Using Empty Email
 
 Try to Register a New User
     Input Text  xpath=//*[@id="email_create"]  koenimi2@gmail.com
-    Mouse Over  xpath=//*[@id="create-account_form"]/div/div[3]/input[2]
+    Log  xpath=//*[@id="SubmitCreate"]
     Click Button  xpath=//*[@id="SubmitCreate"]
     Sleep  2s
     Page Should Contain Element  xpath=//*[@id="account-creation_form"]
